@@ -1,0 +1,16 @@
+customer_table: 
+
+create table customer_details(
+customer_id int auto_increment,
+name varchar(30) not null,
+city varchar(30) not null,
+primary key(customer_id));
+
+account_table:
+
+create table account_details(
+account_no bigint auto_increment,
+customer_id int,
+balance decimal not null,
+primary key(account_no),
+foreign key(customer_id) references customer_details(customer_id) on delete cascade);
